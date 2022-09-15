@@ -1,0 +1,14 @@
+
+<h1>Recetas</h1>
+
+{% if latest_question_list  %}
+    <ul>
+        {% for receta in latest_question_list  %}  <!-- pregunta es un obj de la clase o modelo Pregunta -->
+            <li>
+                <a href="/receta/{{ receta.id }}/">{{ receta.titulo }}</a>
+            </li>                                   <!-- con el obj pregunta accedemos al campo pregunta_texto -->
+        {% endfor  %}
+    </ul>
+{% else %}
+    <p>No hay Recetas.</p>
+{% endif %}   
